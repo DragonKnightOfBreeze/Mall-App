@@ -9,9 +9,9 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.windea</groupId>
-  <artifactId>mail-app</artifactId>
+  <artifactId>mall-app</artifactId>
   <version>0.0.1</version>
-  <name>mail-app</name>
+  <name>Mall App</name>
   <description>《HTML5混合App开发》综合范例项目。</description>
 
   <properties>
