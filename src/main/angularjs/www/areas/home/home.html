@@ -1,0 +1,115 @@
+<ion-view id="home" view-title="首页" cache-view="false">
+  <!--搜索区域-->
+  <div id="header-bar" class="header-bar">
+    <div id="header-bar-bg"></div>
+    <div class="header-bar-logo"></div>
+    <i></i>
+  </div>
+
+  <a class="header-bar-search" ng-href="#">
+    <span class="icon ion-android-search"></span>
+    <div>
+      <input maxlength="20" autocomplete="true" value="美妆1元起，独家放价"/>
+    </div>
+  </a>
+
+  <a class="header-bar-login" ng-href="#">
+    <span>登录</span>
+  </a>
+
+  <ion-content id="home-content" class="scroll-content" scroll="false">
+    <!--轮播图-->
+    <ion-slide-box class="header-slider" auto-play="3000">
+      <ion-slide>
+        <img ng-src="img/home/home-header-slide-1.jpg"/>
+      </ion-slide>
+      <ion-slide>
+        <img ng-src="img/home/home-header-slide-2.jpg"/>
+      </ion-slide>
+      <ion-slide>
+        <img ng-src="img/home/home-header-slide-3.jpg"/>
+      </ion-slide>
+      <ion-slide>
+        <img ng-src="img/home/home-header-slide-4.jpg"/>
+      </ion-slide>
+      <ion-slide>
+        <img ng-src="img/home/home-header-slide-5.jpg"/>
+      </ion-slide>
+    </ion-slide-box>
+
+    <!--功能导航-->
+    <nav id="nav">
+      <!--NOTE 这里的div要设置display: inline-box-->
+      <div ui-sref="tab.category">
+        <img ng-src="img/home/nav0.png" alt="">
+        <h2>分类查询</h2>
+      </div>
+      <div>
+        <img ng-src="img/home/nav1.png" alt=""/>
+        <h2>物流查询</h2>
+      </div>
+      <div>
+        <img ng-src="img/home/nav2.png" alt=""/>
+        <h2>购物车</h2>
+      </div>
+      <div>
+        <img ng-src="img/home/nav3.png" alt=""/>
+        <h2>我的商城</h2>
+      </div>
+      <div>
+        <img ng-src="img/home/nav4.png" alt=""/>
+        <h2>充值</h2>
+      </div>
+      <div>
+        <img ng-src="img/home/nav5.png" alt=""/>
+        <h2>领劵中心</h2>
+      </div>
+      <div>
+        <img ng-src="img/home/nav6.png" alt=""/>
+        <h2>生活团购</h2>
+      </div>
+      <div>
+        <img ng-src="img/home/nav7.png" alt=""/>
+        <h2>我的关注</h2>
+      </div>
+    </nav>
+
+    <!--广告轮播图-->
+    <div class="ad">
+      <ion-slide-box show-pager="true" auto-play="true" does-continue="true">
+        <ion-slide>
+          <img ng-src="img/home/home-ad-1.jpg"/>
+        </ion-slide>
+        <ion-slide>
+          <img ng-src="img/home/home-ad-2.jpg"/>
+        </ion-slide>
+        <ion-slide>
+          <img ng-src="img/home/home-ad-3.jpg"/>
+        </ion-slide>
+      </ion-slide-box>
+    </div>
+
+    <!--掌上秒杀-->
+    <div id="content">
+      <div class="content-top">
+        <span></span>
+        <h2>掌上秒杀</h2>
+        <div class="content-time">
+          <span class="time-text">0</span>
+          <span class="time-text">0</span>
+          <span>:</span>
+          <span class="time-text">0</span>
+          <span class="time-text">0</span>
+          <span>:</span>
+          <span class="time-text">0</span>
+          <span class="time-text">0</span>
+        </div>
+        <div class="content-more">
+          更多
+        </div>
+      </div>
+
+
+    </div>
+  </ion-content>
+</ion-view>
