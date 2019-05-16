@@ -1,0 +1,17 @@
+{
+  "properties": [
+    {
+      "name": "com.qiniu.accessKey",
+      "type": "java.lang.String",
+      "description": "Description for com.qiniu.accessKey."
+    }, {
+      "name": "com.qiniu.secretKey",
+      "type": "java.lang.String",
+      "description": "Description for com.qiniu.secretKey."
+    }, {
+      "name": "com.qiniu.bucket",
+      "type": "java.lang.String",
+      "description": "Description for com.qiniu.bucket."
+    }
+  ]
+}
