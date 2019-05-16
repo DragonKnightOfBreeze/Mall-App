@@ -32,3 +32,9 @@ spring:
     # 防止序列化空对象时出错
     serialization:
       fail-on-empty-beans: false
+
+com:
+  qiniu:
+    accessKey: Bv6YMexamG1xyMcos8sHjhWE6MwyBGbWMfeotjFu
+    secretKey: oDMUveZbL1lEOeZZ5lWbPgfL9FFPFLWptj
+    bucket: mall-app
