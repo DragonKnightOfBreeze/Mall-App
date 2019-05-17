@@ -2287,7 +2287,7 @@
       /**
        * @ngdoc method
        * @name ionic.Platform#isEdge
-       * @returns {boolean} Whether we are running on MS Edge/Windows 10 (inc. Phone)
+       * @returns {boolean} Whether we are running on MS Edge/Windows 10 (part. Phone)
        */
       isEdge: function() {
         return self.is(EDGE);
@@ -24440,10 +24440,22 @@
 
 
 
+
+
+
+
+
+
+
+
         $scope.updateModel = function(method, url) {
           $scope.method = method;
           $scope.url = url;
         };
+
+
+
+
 
 
 
