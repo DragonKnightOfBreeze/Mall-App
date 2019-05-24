@@ -15,7 +15,7 @@ $(document).ready(function() {
 $("#btn_Query").click(function() {
   url = "/MallWeb/guidePage/get";
   let title = $("#title").val();
-  if(title != null && title != "") {
+  if(title != null && title !== "") {
     condition = title;
   } else {
     condition = null;
@@ -46,7 +46,9 @@ $("#btn_Add").click(function() {
   $("#adRight").textbox('setValue', "");
   $("#page").textbox('setValue', "");
   $("#imgName").textbox('setValue', "");
+  $("#imgUrl").text("");
 });
+
 
 // 单击修改按钮
 $("#btn_Edit").click(function() {
@@ -99,7 +101,7 @@ function saveRecord() {
 
   if($("#imgName").textbox("getValue")) {
     // 如果没有重新选择图片，就直接修改文本数据，否则先上传图片再修改数据
-    if($("#imgName").textbox("getValue") == imgName) {
+    if($("#imgName").textbox("getValue") === imgName) {
       saveData()
     } else {
       uploader.start(); // 单击保存按钮后先上传图片，然后添加/修改数据到服务器
@@ -157,6 +159,7 @@ let uploader = Qiniu.uploader({
   auto_start: false, // 选择文件后自动上传，若关闭需要自己绑定事件触发上传
   max_retries: 3, // 上传失败最大重试次数
   save_key: false, // 为false则以上传文件的原名命名，否则随机命名，这里推荐false
+  unique_names: false,
   scope: {
     bucket: key
   },
@@ -187,8 +190,7 @@ let uploader = Qiniu.uploader({
     },
     'UploadProgress': function(up, file) { // 每个文件上传时，处理相关的事情
       console.log("上传中");
-      $("#bar").css("width", file.percent + '%');
-      $("#bar").html(file.percent + '%');
+      $("#bar").css("width", file.percent + '%').html(file.percent + '%');
     },
     'FileUploaded': function(up, file, info) { // 每个文件上传成功后，处理相关的事情
       let domain = up.getOption('domain');
