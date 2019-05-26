@@ -12,12 +12,16 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="5">
+          <list size="9">
             <item index="0" class="java.lang.String" itemvalue="view-title" />
             <item index="1" class="java.lang.String" itemvalue="cache-view" />
             <item index="2" class="java.lang.String" itemvalue="hide-back-button" />
             <item index="3" class="java.lang.String" itemvalue="scroll" />
             <item index="4" class="java.lang.String" itemvalue="lazy-scroll" />
+            <item index="5" class="java.lang.String" itemvalue="pulling-text" />
+            <item index="6" class="java.lang.String" itemvalue="refreshing-text" />
+            <item index="7" class="java.lang.String" itemvalue="on-refresh" />
+            <item index="8" class="java.lang.String" itemvalue="on-infinite" />
           </list>
         </value>
       </option>
