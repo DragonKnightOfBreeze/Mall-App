@@ -4,6 +4,8 @@ import com.windea.demo.mallapp.domain.Promotion;
 import com.windea.demo.mallapp.service.PromotionService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/promotion")
@@ -35,5 +37,11 @@ public class PromotionController {
 	public Promotion get(@PathVariable Integer id) {
 		var result = service.findById(id);
 		return result;
+	}
+
+	@GetMapping("/list")
+	public List<Promotion> list() {
+		var resultList = service.findAll();
+		return resultList;
 	}
 }

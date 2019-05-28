@@ -5,6 +5,8 @@ import com.windea.demo.mallapp.repository.HomePageAdRepository;
 import com.windea.demo.mallapp.service.HomePageAdService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class HomePageAdServiceImpl implements HomePageAdService {
 	private final HomePageAdRepository repository;
@@ -38,5 +40,11 @@ public class HomePageAdServiceImpl implements HomePageAdService {
 	public HomePageAd findById(Integer id) {
 		var result = repository.findById(id).orElse(null);
 		return result;
+	}
+
+	@Override
+	public List<HomePageAd> findAll() {
+		var resultList = repository.findAllByOrderByCategoryAscPageAsc();
+		return resultList;
 	}
 }

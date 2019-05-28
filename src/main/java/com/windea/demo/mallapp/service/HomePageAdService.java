@@ -2,6 +2,8 @@ package com.windea.demo.mallapp.service;
 
 import com.windea.demo.mallapp.domain.HomePageAd;
 
+import java.util.List;
+
 public interface HomePageAdService {
 	HomePageAd insert(HomePageAd homePageAd);
 
@@ -10,4 +12,6 @@ public interface HomePageAdService {
 	HomePageAd update(HomePageAd homePageAd);
 
 	HomePageAd findById(Integer id);
+
+	List<HomePageAd> findAll();
 }

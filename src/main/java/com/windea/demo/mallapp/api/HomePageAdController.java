@@ -4,6 +4,8 @@ import com.windea.demo.mallapp.domain.HomePageAd;
 import com.windea.demo.mallapp.service.HomePageAdService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/home-page-ad")
@@ -35,5 +37,11 @@ public class HomePageAdController {
 	public HomePageAd get(@PathVariable Integer id) {
 		var result = service.findById(id);
 		return result;
+	}
+
+	@GetMapping("/list")
+	public List<HomePageAd> list() {
+		var resultList = service.findAll();
+		return resultList;
 	}
 }

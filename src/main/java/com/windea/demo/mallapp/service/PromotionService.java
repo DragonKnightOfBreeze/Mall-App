@@ -2,6 +2,8 @@ package com.windea.demo.mallapp.service;
 
 import com.windea.demo.mallapp.domain.Promotion;
 
+import java.util.List;
+
 public interface PromotionService {
 	Promotion insert(Promotion promotion);
 
@@ -10,4 +12,6 @@ public interface PromotionService {
 	Promotion update(Promotion promotion);
 
 	Promotion findById(Integer id);
+
+	List<Promotion> findAll();
 }
