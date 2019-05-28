@@ -11,10 +11,15 @@ public class GuidePage extends TBean<Integer> {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+
 	private String adTitle;
+
 	private String adLeft;
+
 	private String adRight;
+
 	private Integer page;
+
 	private String imgUrl;
 
 

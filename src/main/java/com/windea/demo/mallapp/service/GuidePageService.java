@@ -1,6 +1,7 @@
 package com.windea.demo.mallapp.service;
 
 import com.windea.demo.mallapp.domain.GuidePage;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

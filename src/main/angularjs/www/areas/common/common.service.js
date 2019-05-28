@@ -5,5 +5,5 @@ angular.module("common", [])
         title: "提示",
         template: message
       })
-    }
+    };
   });

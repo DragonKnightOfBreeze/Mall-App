@@ -1,7 +1,9 @@
-package com.windea.demo.mallapp.service;
+package com.windea.demo.mallapp.service.impl;
 
 import com.windea.demo.mallapp.domain.GuidePage;
 import com.windea.demo.mallapp.repository.GuidePageRepository;
+import com.windea.demo.mallapp.service.GuidePageService;
+import com.windea.demo.mallapp.service.QiniuService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +17,7 @@ public class GuidePageServiceImpl implements GuidePageService {
 		this.repository = repository;
 		this.qiniuUtils = qiniuUtils;
 	}
+
 
 	@Override
 	public GuidePage insert(GuidePage guidePage) {

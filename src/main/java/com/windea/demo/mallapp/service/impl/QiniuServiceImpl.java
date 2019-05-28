@@ -1,10 +1,11 @@
-package com.windea.demo.mallapp.service;
+package com.windea.demo.mallapp.service.impl;
 
 import com.qiniu.common.QiniuException;
 import com.qiniu.common.Zone;
 import com.qiniu.storage.BucketManager;
 import com.qiniu.storage.Configuration;
 import com.qiniu.util.Auth;
+import com.windea.demo.mallapp.service.QiniuService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -18,6 +19,7 @@ public class QiniuServiceImpl implements QiniuService {
 	private String accessKey;
 	private String secretKey;
 	private String bucket;
+
 
 	/**
 	 * 获取覆盖同名文件的上传凭证。
