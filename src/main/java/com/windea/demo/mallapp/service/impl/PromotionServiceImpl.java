@@ -3,6 +3,8 @@ package com.windea.demo.mallapp.service.impl;
 import com.windea.demo.mallapp.domain.Promotion;
 import com.windea.demo.mallapp.repository.PromotionRepository;
 import com.windea.demo.mallapp.service.PromotionService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -43,8 +45,8 @@ public class PromotionServiceImpl implements PromotionService {
 	}
 
 	@Override
-	public List<Promotion> findAll() {
-		var resultList = repository.findAllByOrderByPageAsc();
-		return resultList;
+	public Page<Promotion> findAll(Pageable pageable) {
+		var result = repository.findAllByOrderByPageAsc(pageable);
+		return result;
 	}
 }

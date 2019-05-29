@@ -15,7 +15,7 @@ public class Product extends TBean<Integer> {
 
 	@JsonIgnore
 	@OneToOne(mappedBy = "product")
-	private HomePageAd homePageAd;
+	private Advert advert;
 
 
 	@Override

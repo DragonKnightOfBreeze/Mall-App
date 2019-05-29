@@ -471,7 +471,7 @@
     $(container).tabs('update', {
       tab: pp,
       options: pp.panel('options'),
-      type: 'header.html'
+      type: 'templates.admin.fragment.header.html'
     });
   }
 
@@ -506,7 +506,7 @@
     if(param.type == 'all' || param.type == 'body') {
       pp.panel();
     }
-    if(param.type == 'all' || param.type == 'header.html') {
+    if(param.type == 'all' || param.type == 'templates.admin.fragment.header.html') {
       var tab = opts.tab;
 
       if(opts.header) {

@@ -3,9 +3,9 @@ package com.windea.demo.mallapp.api;
 import com.windea.demo.mallapp.domain.GuidePage;
 import com.windea.demo.mallapp.domain.GuidePageSearchVo;
 import com.windea.demo.mallapp.service.GuidePageService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -40,9 +40,23 @@ public class GuidePageController {
 		return result;
 	}
 
+	@GetMapping("/list")
+	public Page<GuidePage> list(
+		@RequestParam Integer page, @RequestParam Integer size
+	) {
+		var pageable = PageRequest.of(page, size);
+		var result = service.findAll(pageable);
+		return result;
+	}
+
 	@PostMapping("/search")
-	public List<GuidePage> search(@RequestBody GuidePageSearchVo searchVo) {
-		var result = service.findByConditions(searchVo.getAdTitle(), searchVo.getAdLeft(), searchVo.getAdRight());
+	public Page<GuidePage> search(
+		@RequestParam Integer page, @RequestParam Integer size,
+		@RequestBody GuidePageSearchVo searchVo
+	) {
+		var pageable = PageRequest.of(page, size);
+		var result = service
+			.findAllByConditions(searchVo.getAdTitle(), searchVo.getAdLeft(), searchVo.getAdRight(), pageable);
 		return result;
 	}
 }

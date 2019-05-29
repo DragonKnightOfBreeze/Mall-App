@@ -2,9 +2,9 @@ package com.windea.demo.mallapp.api;
 
 import com.windea.demo.mallapp.domain.Promotion;
 import com.windea.demo.mallapp.service.PromotionService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -40,8 +40,9 @@ public class PromotionController {
 	}
 
 	@GetMapping("/list")
-	public List<Promotion> list() {
-		var resultList = service.findAll();
+	public Page<Promotion> list(@RequestParam Integer page, @RequestParam Integer size) {
+		var pageable = PageRequest.of(page, size);
+		var resultList = service.findAll(pageable);
 		return resultList;
 	}
 }

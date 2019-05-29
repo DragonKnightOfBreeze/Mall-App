@@ -117,7 +117,7 @@
       doSize: false,
       collapsible: true,
       onOpen: function() {
-        var _1e = $(this).panel("header.html").children("div.panel-tool");
+        var _1e = $(this).panel("templates.admin.fragment.header.html").children("div.panel-tool");
         _1e.children("a.panel-tool-collapse").hide();
         var _1f = {north: "up", south: "down", east: "right", west: "left"};
         if(!_1f[dir]) {

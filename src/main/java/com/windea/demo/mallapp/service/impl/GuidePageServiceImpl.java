@@ -4,9 +4,9 @@ import com.windea.demo.mallapp.domain.GuidePage;
 import com.windea.demo.mallapp.repository.GuidePageRepository;
 import com.windea.demo.mallapp.service.GuidePageService;
 import com.windea.demo.mallapp.service.QiniuService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class GuidePageServiceImpl implements GuidePageService {
@@ -49,9 +49,15 @@ public class GuidePageServiceImpl implements GuidePageService {
 		return result;
 	}
 
+	public Page<GuidePage> findAll(Pageable pageable) {
+		var result = repository.findAll(pageable);
+		return result;
+	}
+
 	@Override
-	public List<GuidePage> findByConditions(String adTitle, String adLeft, String adRight) {
-		var resultList = repository.findAllByAdTitleLikeOrAdLeftLikeOrAdRightLike(adTitle, adLeft, adRight);
-		return resultList;
+	public Page<GuidePage> findAllByConditions(String adTitle, String adLeft, String adRight, Pageable pageable) {
+		var result = repository
+			.findAllByAdTitleContainsOrAdLeftContainsOrAdRightContainsOrderByPageAsc(adTitle, adLeft, adRight, pageable);
+		return result;
 	}
 }

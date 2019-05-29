@@ -98,7 +98,7 @@
     _1d.addClass(_1c.cls);
     _1e();
     _1f();
-    var _20 = $(_1a).panel("header.html");
+    var _20 = $(_1a).panel("templates.admin.fragment.header.html");
     var _21 = $(_1a).panel("body");
     var _22 = $(_1a).siblings(".panel-footer");
     if(_1c.border) {
@@ -473,7 +473,7 @@
 
   function _63(_64, _65) {
     $.data(_64, "panel").options.title = _65;
-    $(_64).panel("header.html").find("div.panel-title").html(_65);
+    $(_64).panel("templates.admin.fragment.header.html").find("div.panel-title").html(_65);
   }
 
   var _66 = null;
@@ -620,7 +620,7 @@
     var t = $(_7c);
     var hh = t.children(".panel-header,header");
     var ff = t.children(".panel-footer,footer");
-    return $.extend({}, $.parser.parseOptions(_7c, ["id", "width", "height", "left", "top", "title", "iconCls", "cls", "headerCls", "bodyCls", "tools", "href", "method", "header.html", "footer", {
+    return $.extend({}, $.parser.parseOptions(_7c, ["id", "width", "height", "left", "top", "title", "iconCls", "cls", "headerCls", "bodyCls", "tools", "href", "method", "templates.admin.fragment.header.html", "footer", {
       cache: "boolean",
       fit: "boolean",
       border: "boolean",

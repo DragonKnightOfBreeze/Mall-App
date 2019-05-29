@@ -1008,7 +1008,7 @@
       col.boxWidth = undefined;
       col.auto = true;
       $(_e1).datagrid("fixColumnSize", _e7);
-      var _e9 = Math.max(_ea("header.html"), _ea("allbody"), _ea("allfooter")) + 1;
+      var _e9 = Math.max(_ea("templates.admin.fragment.header.html"), _ea("allbody"), _ea("allfooter")) + 1;
       _e8._outerWidth(_e9 - 1);
       col.width = _e9;
       col.boxWidth = parseInt(_e8[0].style.width);
@@ -1019,7 +1019,7 @@
 
       function _ea(_eb) {
         var _ec = 0;
-        if(_eb == "header.html") {
+        if(_eb == "templates.admin.fragment.header.html") {
           _ec = _ed(_e8);
         } else {
           _e4.finder.getTr(_e1, 0, _eb).find("td[field=\"" + _e7 + "\"] div.datagrid-cell").each(function() {

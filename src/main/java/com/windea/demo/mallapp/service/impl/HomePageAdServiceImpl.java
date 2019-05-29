@@ -1,11 +1,11 @@
 package com.windea.demo.mallapp.service.impl;
 
-import com.windea.demo.mallapp.domain.HomePageAd;
+import com.windea.demo.mallapp.domain.Advert;
 import com.windea.demo.mallapp.repository.HomePageAdRepository;
 import com.windea.demo.mallapp.service.HomePageAdService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class HomePageAdServiceImpl implements HomePageAdService {
@@ -17,8 +17,8 @@ public class HomePageAdServiceImpl implements HomePageAdService {
 
 
 	@Override
-	public HomePageAd insert(HomePageAd homePageAd) {
-		var result = repository.save(homePageAd);
+	public Advert insert(Advert advert) {
+		var result = repository.save(advert);
 		return result;
 	}
 
@@ -28,23 +28,23 @@ public class HomePageAdServiceImpl implements HomePageAdService {
 	}
 
 	@Override
-	public HomePageAd update(HomePageAd homePageAd) {
-		var origin = findById(homePageAd.getId());
+	public Advert update(Advert advert) {
+		var origin = findById(advert.getId());
 		if(origin != null) {
-			repository.save(homePageAd);
+			repository.save(advert);
 		}
-		return homePageAd;
+		return advert;
 	}
 
 	@Override
-	public HomePageAd findById(Integer id) {
+	public Advert findById(Integer id) {
 		var result = repository.findById(id).orElse(null);
 		return result;
 	}
 
 	@Override
-	public List<HomePageAd> findAll() {
-		var resultList = repository.findAllByOrderByCategoryAscPageAsc();
-		return resultList;
+	public Page<Advert> findAll(Pageable pageable) {
+		var result = repository.findAllByOrderByCategoryAscPageAsc(pageable);
+		return result;
 	}
 }

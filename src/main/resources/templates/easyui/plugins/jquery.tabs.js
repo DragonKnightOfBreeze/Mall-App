@@ -393,7 +393,7 @@
         _3f.options.onUnselect.call(_3d, _49.title, _4a(_3d, this));
       }
     }));
-    $(_3d).tabs("update", {tab: pp, options: pp.panel("options"), type: "header.html"});
+    $(_3d).tabs("update", {tab: pp, options: pp.panel("options"), type: "templates.admin.fragment.header.html"});
   }
 
   function _4b(_4c, _4d) {
@@ -419,7 +419,7 @@
     if(_53.type == "all" || _53.type == "body") {
       pp.panel();
     }
-    if(_53.type == "all" || _53.type == "header.html") {
+    if(_53.type == "all" || _53.type == "templates.admin.fragment.header.html") {
       var tab = _55.tab;
       if(_55.header) {
         tab.find(".tabs-inner").html($(_55.header));

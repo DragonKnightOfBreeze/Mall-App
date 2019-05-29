@@ -1,6 +1,8 @@
 package com.windea.demo.mallapp.service;
 
 import com.windea.demo.mallapp.domain.Promotion;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -13,5 +15,5 @@ public interface PromotionService {
 
 	Promotion findById(Integer id);
 
-	List<Promotion> findAll();
+	Page<Promotion> findAll(Pageable pageable);
 }

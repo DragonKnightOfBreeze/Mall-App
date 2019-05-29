@@ -1,17 +1,17 @@
 package com.windea.demo.mallapp.service;
 
-import com.windea.demo.mallapp.domain.HomePageAd;
-
-import java.util.List;
+import com.windea.demo.mallapp.domain.Advert;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface HomePageAdService {
-	HomePageAd insert(HomePageAd homePageAd);
+	Advert insert(Advert advert);
 
 	void deleteById(Integer id);
 
-	HomePageAd update(HomePageAd homePageAd);
+	Advert update(Advert advert);
 
-	HomePageAd findById(Integer id);
+	Advert findById(Integer id);
 
-	List<HomePageAd> findAll();
+	Page<Advert> findAll(Pageable pageable);
 }

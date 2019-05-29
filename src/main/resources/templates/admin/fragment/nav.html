@@ -1,0 +1,36 @@
+﻿<link rel="stylesheet" href="../css/nav.css"/>
+
+<!--导航页面-->
+<div class="easyui-accordion" id="nav" xmlns:th="http://www.thymeleaf.org">
+  <!--/*@thymesVar id="panelIndex" type="java.lang.Integer"*/-->
+  <div title="广告管理" id="advert"
+       th:data-options="${panelIndex}==0?'selected:true':''">
+    <a href="../guide-manage.html?panelIndex=0" class="easyui-linkbutton"
+       data-options="plain:true, iconCls:'icon-large-smartart'">引导管理</a>
+    <a href="../carousel-manage.html?panelIndex=0" class="easyui-linkbutton"
+       data-options="plain:true, iconCls:'icon-tip'">轮播管理</a>
+  </div>
+
+  <div title="首页管理" id="homePage"
+       th:data-options="${panelIndex}==1?'selected:true':''">
+    <a href="inform.html?panelIndex=1" class="easyui-linkbutton"
+       data-options="plain:true, iconCls:'icon-tip'">秒杀管理</a>
+    <a href="admin.html?panelIndex=1" class="easyui-linkbutton"
+       data-options="plain:true, iconCls:'icon-print'">推荐管理</a>
+  </div>
+
+  <div title="分类管理" class="guidePage"
+       th:data-options="${panelIndex}==2?'selected:true':''">
+    <!--TODO-->
+  </div>
+
+  <div title="商品管理" class="guidePage"
+       th:data-options="${panelIndex}==3?'selected:true':''">
+    <!--TODO-->
+  </div>
+
+  <div title="用户管理" class="guidePage"
+       th:data-options="${panelIndex}==4?'selected:true':''">
+    <!--TODO-->
+  </div>
+</div>

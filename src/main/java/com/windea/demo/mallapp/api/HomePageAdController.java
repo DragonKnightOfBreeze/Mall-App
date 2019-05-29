@@ -1,10 +1,10 @@
 package com.windea.demo.mallapp.api;
 
-import com.windea.demo.mallapp.domain.HomePageAd;
+import com.windea.demo.mallapp.domain.Advert;
 import com.windea.demo.mallapp.service.HomePageAdService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -17,8 +17,8 @@ public class HomePageAdController {
 	}
 
 	@PostMapping("/insert")
-	public HomePageAd insert(@RequestBody HomePageAd homePageAd) {
-		var result = service.insert(homePageAd);
+	public Advert insert(@RequestBody Advert advert) {
+		var result = service.insert(advert);
 		return result;
 	}
 
@@ -28,20 +28,21 @@ public class HomePageAdController {
 	}
 
 	@PutMapping("/update")
-	public HomePageAd update(@RequestBody HomePageAd homePageAd) {
-		var result = service.update(homePageAd);
+	public Advert update(@RequestBody Advert advert) {
+		var result = service.update(advert);
 		return result;
 	}
 
 	@GetMapping("/{id}")
-	public HomePageAd get(@PathVariable Integer id) {
+	public Advert get(@PathVariable Integer id) {
 		var result = service.findById(id);
 		return result;
 	}
 
 	@GetMapping("/list")
-	public List<HomePageAd> list() {
-		var resultList = service.findAll();
-		return resultList;
+	public Page<Advert> list(@RequestParam Integer page, @RequestParam Integer size) {
+		var pageable = PageRequest.of(page, size);
+		var result = service.findAll(pageable);
+		return result;
 	}
 }

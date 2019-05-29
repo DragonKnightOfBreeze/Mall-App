@@ -45,7 +45,7 @@
       var totalHeight = 0;
       for(var i = 0; i < panels.length; i++) {
         var p = panels[i];
-        var h = p.panel('header.html')._outerHeight(headerHeight);
+        var h = p.panel('templates.admin.fragment.header.html')._outerHeight(headerHeight);
         if(p.panel('options').collapsible == collapsible) {
           var pheight = isNaN(height) ? undefined : (height + headerHeight * h.length);
           p.panel('resize', {
@@ -175,7 +175,7 @@
             unselect(container, getPanelIndex(container, all[i]));
           }
         }
-        var header = $(this).panel('header.html');
+        var header = $(this).panel('templates.admin.fragment.header.html');
         header.addClass('accordion-header-selected');
         header.find('.accordion-collapse').removeClass('accordion-expand');
       },
@@ -191,7 +191,7 @@
             return false
           }
         }
-        var header = $(this).panel('header.html');
+        var header = $(this).panel('templates.admin.fragment.header.html');
         header.removeClass('accordion-header-selected');
         header.find('.accordion-collapse').addClass('accordion-expand');
       },
@@ -203,7 +203,7 @@
       }
     }));
 
-    var header = pp.panel('header.html');
+    var header = pp.panel('templates.admin.fragment.header.html');
     var tool = header.children('div.panel-tool');
     tool.children('a.panel-tool-collapse').hide();	// hide the old collapse button
     var t = $('<a href="javascript:;"></a>').addClass('accordion-collapse accordion-expand').appendTo(tool);

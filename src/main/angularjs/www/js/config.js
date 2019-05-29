@@ -1,8 +1,14 @@
 /**
- * 配置模块，控制不同平台的兼容性。
+ *  项目的全局配置文件，主要解决兼容性问题。
+ *  如果是网络版的APP，那么需要在此文件中提供访问服务端的接口url。
  */
-angular.module("config", [])
-.config(function($ionicConfigProvider) {
-  //在安卓平台下，让菜单栏显示在底部
-  $ionicConfigProvider.platform.android.tabs.position("bottom");
-});
+angular.module('config', [])
+  .config(function($ionicConfigProvider) {
+    // 设置android平台的选项卡位置
+    $ionicConfigProvider.platform.android.tabs.position('bottom');
+    $ionicConfigProvider.platform.android.tabs.style('standard');
+  })
+  .service('configService', function() {
+    // 对外提供后台的主url
+    this.hostUrl = "http://127.0.0.1:8080/MallApp";
+  });

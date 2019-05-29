@@ -40,7 +40,7 @@ function searchRecord() {
 // 单击添加按钮
 $("#btn_Add").click(function() {
   url = "/MallWeb/guidePage/add";
-  $("#dialog-guide").dialog("open");
+  $("#dialog").dialog("open");
   $("#adTitle").textbox('setValue', "");
   $("#adLeft").textbox('setValue', "");
   $("#adRight").textbox('setValue', "");
@@ -58,7 +58,7 @@ $("#btn_Edit").click(function() {
     showMessage("提示", "请选择需要修改的记录", 2000);
     return;
   }
-  $("#dialog-guide").dialog("open");
+  $("#dialog").dialog("open");
   $("#id").val(row.id);
   $("#adTitle").textbox('setValue', row.adTitle);
   $("#adLeft").textbox('setValue', row.adLeft);
@@ -86,7 +86,7 @@ $("#btn_Del").click(function() {
         imgUrl: imgUrl
       }, function(data) {
         if(data.success) {
-          $("#dialog-guide").dialog("close");
+          $("#dialog").dialog("close");
           $("#dg_guide").datagrid("reload");
           showMessage("提示", data.msg, 2000);
         }
@@ -127,7 +127,7 @@ function saveData() {
     "imgUrl": imgUrl
   }, function(data) {
     if(data.success) {
-      $("#dialog-guide").dialog("close");
+      $("#dialog").dialog("close");
       $("#dg_guide").datagrid("reload");
       showMessage("提示", data.msg, 2000);
     }

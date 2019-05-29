@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="../css/dialog.css"/>
+
+<!--轮播图广告的管理员编辑页面-->
+<div id="dialog" class="easyui-dialog"
+     data-options="title:'编辑引导页数据', buttons:'#btn_guide', closed:true">
+  <div>
+    <input name="id" id="id" type="hidden">
+  </div>
+  <br/>
+  <div>
+    <label>分类：<input name="category" class="easyui-textbox"></label>
+  </div>
+  <br/>
+  <div>
+    <label>页　　码：<input name="page" class="easyui-textbox"></label>
+  </div>
+  <div id="container">
+    <!-- 显示文件名的文本框 -->
+    <label>背景图片：
+      <input class="easyui-textbox" readonly>
+    </label>
+    <!-- 处理图片的url -->
+    <label>
+      <input name="imgUrl" type="hidden">
+      <button type="button" id="pick-files">选择文件</button>
+    </label>
+  </div>
+  <br/>
+</div>
+
+<!-- 对话框按钮 -->
+<div id="btn_guide">
+  <a class="easyui-linkbutton" id="a_save" onclick="saveRecord()"
+     data-options="iconCls:'icon-ok'">保存</a>
+  <a class="easyui-linkbutton" onclick="$('#dialog').dialog('close')"
+     data-options="iconCls:'icon-no'">退出</a>
+</div>

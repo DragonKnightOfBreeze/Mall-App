@@ -1,0 +1,12 @@
+#dialog {
+  width: 430px;
+  height: 330px;
+  padding: 20px 30px;
+}
+input {
+  width: 220px;
+}
+button {
+  font-size: 12px;
+  display: inline;
+}

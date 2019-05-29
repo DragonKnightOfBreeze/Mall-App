@@ -32,7 +32,7 @@
       var _d = 0;
       for(var i = 0; i < _6.length; i++) {
         var p = _6[i];
-        var h = p.panel("header.html")._outerHeight(_7);
+        var h = p.panel("templates.admin.fragment.header.html")._outerHeight(_7);
         if(p.panel("options").collapsible == _b) {
           var _e = isNaN(_c) ? undefined : (_c + _7 * h.length);
           p.panel("resize", {width: cc.width(), height: (_b ? _e : undefined)});
@@ -145,7 +145,7 @@
             _33(_28, _18(_28, all[i]));
           }
         }
-        var _2b = $(this).panel("header.html");
+        var _2b = $(this).panel("templates.admin.fragment.header.html");
         _2b.addClass("accordion-header-selected");
         _2b.find(".accordion-collapse").removeClass("accordion-expand");
       }, onExpand: function() {
@@ -159,7 +159,7 @@
             return false;
           }
         }
-        var _2c = $(this).panel("header.html");
+        var _2c = $(this).panel("templates.admin.fragment.header.html");
         _2c.removeClass("accordion-header-selected");
         _2c.find(".accordion-collapse").addClass("accordion-expand");
       }, onCollapse: function() {
@@ -169,7 +169,7 @@
         _2a.onUnselect.call(_28, $(this).panel("options").title, _18(_28, this));
       }
     }));
-    var _2d = pp.panel("header.html");
+    var _2d = pp.panel("templates.admin.fragment.header.html");
     var _2e = _2d.children("div.panel-tool");
     _2e.children("a.panel-tool-collapse").hide();
     var t = $("<a href=\"javascript:;\"></a>").addClass("accordion-collapse accordion-expand").appendTo(_2e);
